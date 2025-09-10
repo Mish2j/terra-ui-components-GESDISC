@@ -49,7 +49,7 @@
     "build:python": "hatch build",
     "publish:python": "hatch publish",
     "verify": "npm run prettier && npm run build && echo 'should run tests here'",
-    "prepare": "npx playwright install",
+    "prepare": "npm run build && npx playwright install",
     "prepublishOnly": "npm run verify && npm run build:python",
     "postpublish": "npm run publish:python",
     "postversion": "node scripts/bump-python-version.js",
